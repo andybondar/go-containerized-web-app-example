@@ -21,5 +21,5 @@ jobs:
     - name: Run Containerized App
       run: docker run -p 8080:8080 -d --rm --name go-web-app go-web-helloworld:0.0.1
 
-    - name: List sockets inside the container
-      run: docker exec go-web-app netstat -ntpl
+    - name: Get HTTP response from the App
+      run: curl -I http://127.0.0.1:8080
