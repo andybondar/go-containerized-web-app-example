@@ -57,3 +57,5 @@ In this tutorial we will use `GitHub Actions` to automate a CI/CD workflow.
 
 #### Testing new push
 Please review simple workflow defined in the [.github/workflows/container_image.yml](.github/workflows/container_image.yml). It is run on each push to any branch (keep in mind that the `main` branch is protected from direct pushes) and also on each pull request to `main` branch. The `container_image.yml` workflow verifies the App is ability to be built, to run and respond to HTTP requests.
+
+#### Releasing Docker Image to Docker Hub.
