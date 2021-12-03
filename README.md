@@ -45,3 +45,15 @@ TBD
 
 ## Using CI/CD
 ### GitHub Actions
+#### Basics
+Here are some examples of the `software development workflows`:
+* Processing request from GitHub user wanting to join the project as a contributor (verification of his or her identity, granting access, etc.)
+* Processing new pull request (running some tests, assigning it to somebody who can review, reporting status to its creator, merging it to master branch when it's ready, etc)
+* Processing new issue from user (sorting and prioritizing the issue, assigning to someone who can handle it, reporting it's statut, etc)
+* etc.
+
+Basic concept of the `GitHub Actions` - it listents to the `Events` that happen IN or TO your repository, and it takes pre-defined `Actions` on those events.
+In this tutorial we will use `GitHub Actions` to automate a CI/CD workflow.
+
+#### Testing new push
+Please review simple workflow defined in the [.github/workflows/container_image.yml](.github/workflows/container_image.yml). It is run on each push to any branch (keep in mind that the `main` branch is protected from direct pushes) and also on each pull request to `main` branch.
