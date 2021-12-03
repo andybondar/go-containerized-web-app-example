@@ -1,9 +1,9 @@
-name: Docker Image CI
+name: Docker Image Test
 
 on:
   push:
     branches: [ '**' ]
-    paths-ignore: ['**.md']
+    paths: ['app/**','Dockerfile','.github/workflows/container_image_test.yml']
   pull_request:
     branches: [ main ]
 
