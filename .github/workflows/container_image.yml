@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ 'feature/*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag go-web-helloworld:0.0.1
+
+    - name: Run Containerized App
+      run: docker run -p 8080:8080 -d --rm --name go-web-app go-web-helloworld:0.0.1
+
+    - name: List sockets inside the container
+      run: docker exec go-web-app netstat -ntpl
