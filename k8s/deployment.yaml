@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goweb-helloworld-deployment
+  namespace: goweb-helloworld
+  labels:
+    app: goweb-helloworld-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goweb-helloworld-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: goweb-helloworld-app
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: goweb-helloworld-app
+        image: andriibondarua/go-web-helloworld:0.0.2
+        ports:
+        - name: goweb-http
+          containerPort: 8080
