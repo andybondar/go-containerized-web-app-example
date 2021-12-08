@@ -115,8 +115,21 @@ In this tutorial, we will use `GitHub Actions` to automate a CI/CD workflow.
 
 For more basic information on the `GitrHub Actions` please watch [this video](https://www.youtube.com/watch?v=R8_veQiYBjI&t=1207s). For more detailed information, please read [the documentation](https://docs.github.com/en/actions).
 
-#### Testing new push
-Please review the simple workflow defined in the [.github/workflows/container_image.yml](.github/workflows/container_image.yml). It is run on each push to any branch (assuming that the `main` branch is protected from direct pushes) and also on each pull request to `main` branch. The `container_image.yml` workflow verifies the App is ability to be built, to run and respond to HTTP requests.
+In the GitHub Web UI, go to your repository and then to the `Actions` Tab, to see the Workflows statuses.
+
+#### Test every new push
+Please review the simple workflow defined in the [.github/workflows/container_image.yml](.github/workflows/container_image.yml). It is supposed to be run on each push to any branch (assuming that the `main` branch is protected from direct pushes) and also on merge request to the `main` branch. The `container_image.yml` workflow verifies the App's ability to be built, to run and respond to HTTP requests.
 
 #### Releasing Docker Image to Docker Hub.
-TBD
+It is also supposed to be automated by using `GitHub Actions`. Before it's done, you can build the container image and push it to the Docker Hub Registry using code from the `master` banch and `docker` CLI tool:
+
+* Clone the repo to your computer, assuming that you do have the `Docker Engine` installed
+* Login to [DockerHub WebUI](https://hub.docker.com/) and create an Access Token: Dropdown under your account's avatar -> Account Settings -> Security -> New Access Token
+* Copy the Access Token and save it in a safe place for furhter usage
+* In the command line terminal, do the following:
+```
+cd go-containerized-web-app-example/
+docker build -t go-web-helloworld:0.0.1 .
+docker tag go-web-helloworld:0.0.1 {your_dockerhub_account_name}/go-web-helloworld:0.0.1
+docker push {your_dockerhub_account_name}/go-web-helloworld:0.0.1
+```
