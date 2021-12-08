@@ -4,8 +4,6 @@ on:
   push:
     branches: [ '**' ]
     paths: ['app/**','Dockerfile','.github/workflows/container_image_test.yml']
-  pull_request:
-    branches: [ main ]
 
 jobs:
 
