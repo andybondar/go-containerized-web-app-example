@@ -13,7 +13,7 @@ This tutorial aims to guide the beginners through the process of creating, build
 * Optionally, you may want to install Go Development Kit on your computer. However, I would recommend using a [containerized Dev Environment](#containerized-development-environment) rather than installing everything locally, but it is up to you.
 
 ## Writing the Application
-Create folder `app` to put the 1st file with Application Code into it. You can use the [example here](app/server.go), modify it, or write your own code using your favorite IDE. If you don't have any experience with Go language, the [Go website](https://go.dev/) is a good point to start.
+Create folder `app` to put the 1st file with Application Code into it. You can use the [example here](app/main.go), modify it, or write your own code using your favorite IDE. If you don't have any experience with Go language, the [Go website](https://go.dev/) is a good point to start.
 
 ## Building the Application
 Once you're happy with what your code looks like, you can build and containerize the Application. Go to the root folder of your repository (where the `Dockerfile` is located) and run this:
